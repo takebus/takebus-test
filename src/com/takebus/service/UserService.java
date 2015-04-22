@@ -105,13 +105,13 @@ public class UserService {
 	@Path("/login")
     @Produces(MediaType.TEXT_HTML)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    public String newTodo(@FormParam("id") int id,
-        @FormParam("firstName") String firstName,
-        @FormParam("lastName") String lastName,
-        @FormParam("age") int age,
+    public String loginCheck(
+        @FormParam("email") String email,
+        @FormParam("password") String password,
         @Context HttpServletResponse servletResponse) throws IOException {
-
-    	System.out.println(id + ", " + firstName + ", " + lastName + ", " + age);
+    	
+    	String out = email + ", " + password;
+    	System.out.println(out);
     	return "success";
     }   
 }
