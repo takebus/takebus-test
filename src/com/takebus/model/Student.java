@@ -1,5 +1,8 @@
 package com.takebus.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Student {
 
 	private int id;
@@ -8,9 +11,7 @@ public class Student {
 	private int age;
 
 	// Must have no-argument constructor
-	public Student() {
-
-	}
+	public Student() {}
 
 	public Student(String fname, String lname, int age, int id) {
 		this.firstName = fname;
@@ -53,10 +54,10 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return new StringBuffer(" First Name : ").append(this.firstName)
-				.append(" Last Name : ").append(this.lastName)
-				.append(" Age : ").append(this.age).append(" ID : ")
-				.append(this.id).toString();
+		return 	"id:" + this.id + ", " +
+				"firstName:" + this.firstName + ", " + 
+				"lastName:" + this.lastName + ", " + 
+				"age:" + this.age;
 	}
 
 }

@@ -61,15 +61,29 @@ public class StudentService {
     	System.out.println(id + ", " + firstName + ", " + lastName + ", " + age);
     	return "success";
     }   
+ /*   
+	@POST
+	@Path("/send")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Student consumeJSON( Student student ) {
+
+		String output = student.toString();
+		System.out.println(output);
+		//return "success";
+		return student;
+	}
+*/	
     
 	@POST
 	@Path("/send")
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.TEXT_HTML)
+	@Produces(MediaType.TEXT_PLAIN)
 	public String consumeJSON( Student student ) {
-
-		String output = student.toString();
-		System.out.println(output);
+	
+		System.out.println(student.toString());
 		return "success";
-	}   
+	}
+
+	
 }

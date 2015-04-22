@@ -1,12 +1,23 @@
 package com.takebus.model;
 
-import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import org.codehaus.jackson.annotate.JsonProperty;
+
+//@XmlRootElement
+//@JsonIgnoreProperties( { "password" })
+//@JsonIgnoreProperties(ignoreUnknown = true)
+//@JsonIgnoreProperties(value = { "password" })
+@JsonIgnoreProperties(ignoreUnknown = true, value = { "password" }) 
 public class User {
 
 	private int customerID;
 	private String email;
+	@JsonIgnore 
 	private String password;
 	private String firstName;
 	private String lastName;
@@ -48,7 +59,9 @@ public class User {
 		this.email = email;
 	}	
 	
+	@JsonIgnore
 	public String getPassword() { return password;}
+	@JsonIgnore
 	public void setPassword(String password) {
 		this.password = password;
 	}
@@ -105,8 +118,6 @@ public class User {
 	
 	@Override
 	public String toString() {
-		return new StringBuffer("First Name:").append(this.firstName)
-				.append(" Last Name:").append(this.lastName)
-				.append(" email:").append(this.email).toString();
+		return this.email + ", " + this.firstName + ", " + this.lastName;
 	}
 }
