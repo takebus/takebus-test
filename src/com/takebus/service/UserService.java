@@ -64,5 +64,27 @@ public class UserService {
     	else {
     		return "no";
     	}
-    }     
+    }    
+     
+    
+    @POST
+	@Path("/update")
+    //@Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public String update(User user) throws IOException {
+    	System.out.println(user.toString());
+    	
+    	if (UserDao.instance.getModel().containsKey(user.getEmail())) {
+    		User ux = UserDao.instance.getModel().get(user.getEmail());
+    		
+    		if (user.getPassword() != "") ux.setPassword(user.getPassword());
+    		if (user.getFirstName() != "") ux.setFirstName(user.getFirstName());
+    		if (user.getLastName() != "") ux.setLastName(user.getLastName());
+    		
+    		return "yes";
+    	}
+    	else {
+    		return "no";
+    	}
+    }   
 }

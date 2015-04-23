@@ -1,12 +1,10 @@
 package com.takebus.model;
 
 
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
+
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import org.codehaus.jackson.annotate.JsonProperty;
+
 
 //@XmlRootElement
 //@JsonIgnoreProperties( { "password" })
@@ -15,9 +13,8 @@ import org.codehaus.jackson.annotate.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true, value = { "password" }) 
 public class User {
 
-	private int customerID;
+	private int userID;
 	private String email;
-	@JsonIgnore 
 	private String password;
 	private String firstName;
 	private String lastName;
@@ -25,16 +22,16 @@ public class User {
 	private String address;
 	private String city;
 	private String state;
-	private String zipCode;
+	private String zip;
 	private String country;
 	private String createdDate;
 	private String lastModifiedDate;
 	
 	public User() {}
 	
-	public User(int customerID, String email, String password, String firstName, String lastName, String phoneNumber, String address, 
-			String city, String state, String zipCode, String country, String createdDate, String lastModifiedDate) {
-		this.customerID = customerID;
+	public User(int userID, String email, String password, String firstName, String lastName, String phoneNumber, String address, 
+			String city, String state, String zip, String country, String createdDate, String lastModifiedDate) {
+		this.userID = userID;
 		this.email = email;	
 		this.password = password;
 		this.firstName = firstName;
@@ -43,15 +40,15 @@ public class User {
 		this.address = address;
 		this.city = city;
 		this.state = state;
-		this.zipCode = zipCode;
+		this.zip = zip;
 		this.country = country;
 		this.createdDate = createdDate;
 		this.lastModifiedDate = lastModifiedDate;
 	}
 	
-	public int getCustomerID() {return customerID;}
-	public void setCustomerID(int customerID) {
-		this.customerID = customerID;
+	public int getUserID() {return userID;}
+	public void setUserID(int userID) {
+		this.userID = userID;
 	}	
 
 	public String getEmail() { return email;}
@@ -59,9 +56,7 @@ public class User {
 		this.email = email;
 	}	
 	
-	@JsonIgnore
 	public String getPassword() { return password;}
-	@JsonIgnore
 	public void setPassword(String password) {
 		this.password = password;
 	}
@@ -96,9 +91,9 @@ public class User {
 		this.state = state;
 	}
 
-	public String getZipCode() { return zipCode;}
-	public void setZipCode(String zipCode) {
-		this.zipCode = zipCode;
+	public String getZip() { return zip;}
+	public void setZip(String zip) {
+		this.zip = zip;
 	}
 	
 	public String getcountry() { return country;}
@@ -118,6 +113,18 @@ public class User {
 	
 	@Override
 	public String toString() {
-		return this.email + ", " + this.firstName + ", " + this.lastName;
+		return 	"userID:" + this.userID + ", " +
+				"email:" + this.email + ", " + 
+				"password:" + this.password + ", " + 
+				"firstName:" + this.firstName + ", " +
+				"lastName:" + this.lastName + ", " +
+				"phoneNumber:" + this.phoneNumber + ", " + 
+				"address:" + this.address + ", " + 
+				"city:" + this.city + ", " +
+				"state:" + this.state + ", " +
+				"zip:" + this.zip + ", " +
+				"country:" + this.country + ", " +
+				"createdDate:" + this.createdDate + ", " +
+				"lastModifiedDate:" + this.lastModifiedDate;
 	}
 }
