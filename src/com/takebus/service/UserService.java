@@ -1,6 +1,8 @@
 package com.takebus.service;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import javax.ws.rs.Consumes;
@@ -113,8 +115,7 @@ public class UserService {
 			@FormParam("city") String city,
 			@FormParam("state") String state,
 			@FormParam("zip") String zip,
-			@FormParam("country") String country,
-			@FormParam("lastModifiedDate") String lastModifiedDate) throws IOException {
+			@FormParam("country") String country) throws IOException {
 		
 		Map<String, String> succ = new HashMap<String, String>();
 		succ.put("callback", "success");
@@ -122,4 +123,58 @@ public class UserService {
 		
 		return gson.toJson(succ);
 	}  	
+	
+	@POST
+	@Path("/register")
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	public String register_inForm_outText(@FormParam("email") String email, 
+			@FormParam("password") String password, 
+			@FormParam("firstName") String firstName,
+			@FormParam("lastName") String lastName,
+			@FormParam("phoneNumber") String phoneNumber,
+			@FormParam("address") String address,
+			@FormParam("city") String city,
+			@FormParam("state") String state,
+			@FormParam("zip") String zip,
+			@FormParam("country") String country) throws IOException {
+		
+		if ( UserDao.instance.getModel().containsKey(email) ) return "registered";
+		
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date date = new Date();
+		System.out.println(dateFormat.format(date)); //2014/08/06 15:59:48
+		
+		String createdDate = dateFormat.format(date);
+		int uid = UserDao.instance.getModel().size() + 1;
+		
+		User user = new User(uid, email, password, firstName, lastName, phoneNumber, address, city, state, zip, country, createdDate, "");
+		UserDao.instance.getModel().put(email, user);
+		
+		System.out.println(user.toString());
+		return "success";
+	} 	
+
+	@POST
+	@Path("/register")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public String register_inJson_outText(User user) throws IOException {
+		
+		if ( UserDao.instance.getModel().containsKey(user.getEmail()) ) return "registered";
+		
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date date = new Date();
+		System.out.println(dateFormat.format(date)); //2014/08/06 15:59:48
+		
+		String createdDate = dateFormat.format(date);
+		int uid = UserDao.instance.getModel().size() + 1;
+		String email = user.getEmail();
+		
+		user.setUserID(uid);
+		user.setCreatedDate(createdDate);
+		
+		UserDao.instance.getModel().put(email, user);
+		
+		System.out.println(user.toString());
+		return "success";
+	} 
 }
