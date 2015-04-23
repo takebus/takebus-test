@@ -52,21 +52,27 @@ public class UserService {
 	
     @POST
 	@Path("/login")
-    //@Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Produces(MediaType.APPLICATION_JSON)
     public String loginCheck(@FormParam("email") String email,
     							@FormParam("password") String password) throws IOException {
-    	String out = email + ", " + password;
-    	System.out.println(out);
+    	
+    	System.out.println(email + ", " + password);
     	System.out.println(UserDao.instance.getModel().containsKey(email));
-    	//System.out.println(UserDao.instance.getModel().get(email));
+    	
+		Gson gson = new Gson();
+		Map<String, User> hmap = new HashMap<String, User>();
+		
     	if (UserDao.instance.getModel().containsKey(email) &&
     			UserDao.instance.getModel().get(email).getPassword().equals(password)) {
-    		return "success";
+    		//return "success";
+    		hmap.put("user", UserDao.instance.getModel().get(email));
     	}
     	else {
-    		return "failed";
+    		//return "failed";
+    		hmap.put("user", null);
     	}
+    	return gson.toJson(hmap);
     }    
      
     

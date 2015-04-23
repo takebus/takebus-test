@@ -38,9 +38,13 @@ public class PaymentService {
     @POST
 	@Path("/pay")
     @Consumes(MediaType.APPLICATION_JSON)
-    public String pay_inJson_outText(Payment payinfo) throws IOException {
+    public String pay_inJson_outText(Payment payment) throws IOException {
     	
-    	System.out.println("inJson_outText: " + payinfo.toString());
+    	int pid = PaymentDao.instance.getModel().size() + 1;
+    	payment.setPaymentID(pid);
+      	System.out.println("inForm_outJson:" + payment.toString());
+    	
+    	PaymentDao.instance.getModel().put(String.valueOf(pid), payment);
     	
     	return "success";
     }
@@ -49,9 +53,13 @@ public class PaymentService {
 	@Path("/pay")
     @Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-    public String pay_inJson_outJson(Payment payinfo) throws IOException {
+    public String pay_inJson_outJson(Payment payment) throws IOException {
     	
-    	System.out.println("inJson_outJson: " + payinfo.toString());
+    	int pid = PaymentDao.instance.getModel().size() + 1;
+    	payment.setPaymentID(pid);
+    	System.out.println("inForm_outJson:" + payment.toString());
+    	
+    	PaymentDao.instance.getModel().put(String.valueOf(pid), payment);
     	
 		Map<String, String> succ = new HashMap<String, String>();
 		succ.put("callback", "success");
@@ -77,7 +85,11 @@ public class PaymentService {
 			@FormParam("billingZip") String billingZip,
 			@FormParam("billingCountry") String billingCountry) throws IOException {
     	
-    	System.out.println("inFrom_outText:" + amount + "," + firstName + "," + lastName);
+    	int pid = PaymentDao.instance.getModel().size() + 1;
+    	Payment payment = new Payment(pid, amount, firstName, lastName, type, cardNumber, sid, expire, shippingAddress, billingAddress, billingCity, billingState, billingZip, billingCountry);
+    	System.out.println("inForm_outJson:" + payment.toString());
+    	
+    	PaymentDao.instance.getModel().put(String.valueOf(pid), payment);
 		
 		return "success";
     }
@@ -100,7 +112,11 @@ public class PaymentService {
 			@FormParam("billingZip") String billingZip,
 			@FormParam("billingCountry") String billingCountry) throws IOException {
     	
-    	System.out.println("inFrom_outJson:" + amount + "," + firstName + "," + lastName);
+    	int pid = PaymentDao.instance.getModel().size() + 1;
+    	Payment payment = new Payment(pid, amount, firstName, lastName, type, cardNumber, sid, expire, shippingAddress, billingAddress, billingCity, billingState, billingZip, billingCountry);
+    	System.out.println("inForm_outJson:" + payment.toString());
+    	
+    	PaymentDao.instance.getModel().put(String.valueOf(pid), payment);
     	
 		Map<String, String> succ = new HashMap<String, String>();
 		succ.put("callback", "success");
