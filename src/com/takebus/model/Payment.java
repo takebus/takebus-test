@@ -1,5 +1,9 @@
 package com.takebus.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+
+@XmlRootElement
 public class Payment {
 	
 	private int paymentID;

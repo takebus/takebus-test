@@ -3,10 +3,12 @@ package com.takebus.model;
 
 
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 
-//@XmlRootElement
+@XmlRootElement
 //@JsonIgnoreProperties( { "password" })
 //@JsonIgnoreProperties(ignoreUnknown = true)
 //@JsonIgnoreProperties(value = { "password" })

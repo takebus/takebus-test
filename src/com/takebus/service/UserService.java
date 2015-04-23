@@ -12,6 +12,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import com.google.gson.Gson;
 import com.takebus.dao.UserDao;
 import com.takebus.model.User;
 
@@ -59,19 +60,18 @@ public class UserService {
     	//System.out.println(UserDao.instance.getModel().get(email));
     	if (UserDao.instance.getModel().containsKey(email) &&
     			UserDao.instance.getModel().get(email).getPassword().equals(password)) {
-    		return "yes";
+    		return "success";
     	}
     	else {
-    		return "no";
+    		return "failed";
     	}
     }    
      
     
     @POST
 	@Path("/update")
-    //@Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public String update(User user) throws IOException {
+    public String update_inJson_outText(User user) throws IOException {
     	System.out.println(user.toString());
     	
     	if (UserDao.instance.getModel().containsKey(user.getEmail())) {
@@ -81,10 +81,45 @@ public class UserService {
     		if (user.getFirstName() != "") ux.setFirstName(user.getFirstName());
     		if (user.getLastName() != "") ux.setLastName(user.getLastName());
     		
-    		return "yes";
+    		return "success";
     	}
     	else {
-    		return "no";
+    		return "failed";
     	}
-    }   
+    }
+    
+	@POST
+	@Path("/update")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public String update_inJson_outJson(User user) throws IOException {
+		Map<String, String> succ = new HashMap<String, String>();
+		succ.put("callback", "success");
+		Gson gson = new Gson();
+		
+		return gson.toJson(succ);
+	}   
+	
+	@POST
+	@Path("/update")
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Produces(MediaType.APPLICATION_JSON)
+	public String update_inForm_outJson(@FormParam("email") String email, 
+			@FormParam("password") String password, 
+			@FormParam("firstName") String firstName,
+			@FormParam("lastName") String lastName,
+			@FormParam("phoneNumber") String phoneNumber,
+			@FormParam("address") String address,
+			@FormParam("city") String city,
+			@FormParam("state") String state,
+			@FormParam("zip") String zip,
+			@FormParam("country") String country,
+			@FormParam("lastModifiedDate") String lastModifiedDate) throws IOException {
+		
+		Map<String, String> succ = new HashMap<String, String>();
+		succ.put("callback", "success");
+		Gson gson = new Gson();
+		
+		return gson.toJson(succ);
+	}  	
 }
