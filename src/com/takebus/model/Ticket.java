@@ -6,6 +6,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Ticket {
 	private int ticketID;
+	
+	private int orderID;
+	
 	private int scheduleID;
 
 	private String holderName;
@@ -15,6 +18,8 @@ public class Ticket {
 	private String ticketType;
 	private String barcode;
 	private float price;
+	
+	private String purchased;
 	private String expire;
 	
 	public Ticket() {}
