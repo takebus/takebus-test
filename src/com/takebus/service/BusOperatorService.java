@@ -17,7 +17,7 @@ public class BusOperatorService {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)	
-	public List<BusOperator> getPayments() {
+	public List<BusOperator> getOperators() {
 		List<BusOperator> list = new ArrayList<BusOperator>();
 		list.addAll(BusOperatorDao.instance.getModel().values());
 		
