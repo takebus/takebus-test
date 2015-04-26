@@ -8,6 +8,8 @@ public class Payment {
 	
 	private int paymentID;
 	
+	private int userID;
+	
 	private float amount;
 	
 	private String firstName;
