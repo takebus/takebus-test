@@ -123,31 +123,10 @@ public class UserService {
 			@FormParam("zip") String zip,
 			@FormParam("country") String country) throws IOException {
 		
-		Gson gson = new Gson();
 		Map<String, String> succ = new HashMap<String, String>();
 		succ.put("callback", "success");
-		Map<String, String> fail = new HashMap<String, String>();
-		fail.put("callback", "failed");
+		Gson gson = new Gson();
 		
-		if ( !UserDao.instance.getModel().containsKey(email) ) return gson.toJson(fail);
-		User ux = UserDao.instance.getModel().get(email);
-		
-		if (email != "") ux.setEmail(email);;
-		if (password != "") ux.setPassword(password);;
-		if (firstName != "") ux.setFirstName(firstName);;	
-		if (lastName != "") ux.setLastName(lastName);;
-		if (phoneNumber != "") ux.setPhoneNumber(phoneNumber);
-		if (address != "") ux.setAddress(address);
-		if (city != "") ux.setCity(city);
-		if (state != "") ux.setState(state);
-		if (zip != "") ux.setZip(zip);
-		if (country != "") ux.setcountry(country);
-		
-		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-		Date date = new Date();
-		System.out.println(dateFormat.format(date)); //2014/08/06 15:59:48
-		String lastModifiedDate = dateFormat.format(date);
-		ux.setLastModifiedDate(lastModifiedDate);
 		return gson.toJson(succ);
 	}  	
 	

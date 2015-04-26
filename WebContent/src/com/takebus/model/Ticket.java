@@ -7,13 +7,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Ticket {
 	private int ticketID;
 	
-	private int userID;
-	
 	private int orderID;
 	
 	private int scheduleID;
 
-	//private String holderName;
+	private String holderName;
 	
 	private String ticketDate;
 
@@ -24,10 +22,10 @@ public class Ticket {
 	private String expire;
 	
 	public Ticket() {}
-	public Ticket(int ticketID, int scheduleID, String ticketDate, String ticketType, String barcode, float price) {
+	public Ticket(int ticketID, int scheduleID, String holderName, String ticketDate, String ticketType, String barcode, float price) {
 		this.ticketID = ticketID;
 		this.scheduleID = scheduleID;
-		//this.holderName = holderName;
+		this.holderName = holderName;
 		this.ticketDate = ticketDate;
 		this.ticketType = ticketType;
 		this.barcode = barcode;
@@ -43,12 +41,12 @@ public class Ticket {
 	public void setScheduleID(int scheduleID) {
 		this.scheduleID = scheduleID;
 	}
-/*	
+	
 	public String getHolderName() { return holderName;}
 	public void setHolderName(String holderName) {
 		this.holderName = holderName;
 	}
-*/	
+	
 	public String getTicketDate() { return ticketDate;}
 	public void setTicketDate(String ticketDate) {
 		this.ticketDate = ticketDate;

@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Schedule {
 
 	private int scheduleID;
-	private String scheduleIDStr;
+	private String schedule;
 	private int departureCityID;
 	private String departureTime;
 	private int arrivalCityID;
@@ -17,9 +17,9 @@ public class Schedule {
 	
 	public Schedule() {}
 	
-	public Schedule(int scheduleID, String scheduleIDStr, int departureCityID, String departureTime, int arrivalCityID, String arrivalTime, int busOperatorID, float price) {
+	public Schedule(int scheduleID, String schedule, int departureCityID, String departureTime, int arrivalCityID, String arrivalTime, int busOperatorID, float price) {
 		this.scheduleID = scheduleID;
-		this.scheduleIDStr = scheduleIDStr;
+		this.schedule = schedule;
 		this.departureCityID = departureCityID;
 		this.departureTime = departureTime;
 		this.arrivalCityID = arrivalCityID;
@@ -33,9 +33,9 @@ public class Schedule {
 		this.scheduleID = scheduleID;
 	}
 	
-	public String getScheduleIDStr() { return scheduleIDStr;}
-	public void setScheduleIDStr(String scheduleIDStr) {
-		this.scheduleIDStr = scheduleIDStr;
+	public String getSchedule() { return schedule;}
+	public void setSchedule(String schedule) {
+		this.schedule = schedule;
 	}
 	
 	public int getDepartureCityID() { return departureCityID;}
