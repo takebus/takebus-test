@@ -19,10 +19,10 @@ public enum TicketDetailDao {
 		Order o1 = OrderDao.instance.getModel().get("1");
 		Order o2 = OrderDao.instance.getModel().get("2");
 		
-		TicketDetail t1 = new TicketDetail(1, u1, o1, "CBT583", "1400 Washington Ave", "7:20am", "888 6th Ave", "11:00am", "Capital Bus Tours", "2015-04-21", "round", "barcode", "yes", 15);
-		TicketDetail t2 = new TicketDetail(2, u1, o1, "CBT134", "888 6th Ave", "8:30am", "1400 Washington Ave", "12:00pm", "Capital Bus Tours", "2015-04-22", "round", "barcode", "yes", 15);
+		TicketDetail t1 = new TicketDetail(1, u1, o1, "CBT583", "1400 Washington Ave", "NY", "7:20am", "888 6th Ave", "NY", "11:00am", "Capital Bus Tours", "2015-04-21", "round", "barcode", "yes", 15, "Dean Brian");
+		TicketDetail t2 = new TicketDetail(2, u1, o1, "CBT134", "888 6th Ave", "8:30am", "NY", "1400 Washington Ave", "NY", "12:00pm", "Capital Bus Tours", "2015-04-22", "round", "barcode", "yes", 15, "Dean Brian");
 		
-		TicketDetail t3 = new TicketDetail(3, u1, o2, "CBT783", "1400 Washington Ave", "5:50pm", "888 6th Ave", "9:30pm", "Capital Bus Tours", "2015-05-12", "single", "barcode", "no", 15);
+		TicketDetail t3 = new TicketDetail(3, u1, o2, "CBT783", "1400 Washington Ave", "NY", "5:50pm", "888 6th Ave", "NY", "9:30pm", "Capital Bus Tours", "2015-05-12", "one", "barcode", "no", 15, "Dean Brian");
 
 		ticketDetailPool.put("1", t1);
 		ticketDetailPool.put("2", t2);

@@ -25,11 +25,12 @@ public class Ticket {
 	private String expire;	
 	
 	private float price;
-
+	String holderName;
 	
 	public Ticket() {}
 	public Ticket(int ticketID, int userID, int orderID, String scheduleIDStr, String departureStation, String departureTime, 
-			String arrivalStation, String arrivalTime, String busOperator, String ticketDate, String ticketType, String barcode, String expire, float price) {
+			String arrivalStation, String arrivalTime, String busOperator, String ticketDate, String ticketType, 
+			String barcode, String expire, float price, String holderName) {
 		this.ticketID = ticketID;
 		this.userID = userID;
 		this.orderID = userID;
@@ -44,6 +45,7 @@ public class Ticket {
 		this.barcode = barcode;
 		this.expire = expire;
 		this.price = price;
+		this.holderName = holderName;
 	}
 	
 	public int getTicketID() { return ticketID;}
@@ -114,5 +116,10 @@ public class Ticket {
 	public float getPrice() { return price;}
 	public void setPrice(float price) {
 		this.price = price;
+	}
+	
+	public String getHolderName() { return holderName;}
+	public void setHolderName(String holderName) {
+		this.holderName = holderName;
 	}
 }

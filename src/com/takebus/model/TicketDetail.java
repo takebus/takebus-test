@@ -10,8 +10,11 @@ public class TicketDetail {
 	private String scheduleIDStr;
 	
 	private String departureStation;
+	private String departureCity;
 	private String departureTime;
+	
 	private String arrivalStation;
+	private String arrivalCity;
 	private String arrivalTime;
 	
 	private String busOperator;
@@ -23,18 +26,21 @@ public class TicketDetail {
 	private String expire;	
 	
 	private float price;
-
+	String holderName;
 	
 	public TicketDetail() {}
-	public TicketDetail(int ticketID, User user, Order order, String scheduleIDStr, String departureStation, String departureTime, 
-			String arrivalStation, String arrivalTime, String busOperator, String ticketDate, String ticketType, String barcode, String expire, float price) {
+	public TicketDetail(int ticketID, User user, Order order, String scheduleIDStr, String departureStation, String departureCity, String departureTime, 
+			String arrivalStation, String arrivalCity, String arrivalTime, String busOperator, String ticketDate, String ticketType, String barcode, 
+			String expire, float price, String holderName) {
 		this.ticketID = ticketID;
 		this.user = user;
 		this.order = order;
 		this.scheduleIDStr = scheduleIDStr;
 		this.departureStation = departureStation;
+		this.departureCity = departureCity;
 		this.departureTime = departureTime;
 		this.arrivalStation = arrivalStation;
+		this.arrivalCity = arrivalCity;
 		this.arrivalTime = arrivalTime;
 		this.busOperator = busOperator;
 		this.ticketDate = ticketDate;
@@ -42,6 +48,7 @@ public class TicketDetail {
 		this.barcode = barcode;
 		this.expire = expire;
 		this.price = price;
+		this.holderName = holderName;
 	}
 	
 	public int getTicketID() { return ticketID;}
@@ -69,6 +76,11 @@ public class TicketDetail {
 		this.departureStation = departureStation;
 	}
 	
+	public String getDepartureCity() { return departureCity;}
+	public void setDepartureCity(String departureCity) {
+		this.departureCity = departureCity;
+	}
+	
 	public String getDepartureTime() { return departureTime;}
 	public void setDepartureTime(String departureTime) {
 		this.departureTime = departureTime;
@@ -77,6 +89,11 @@ public class TicketDetail {
 	public String getArrivalStation() { return arrivalStation;}
 	public void setArrivalStation(String arrivalStation) {
 		this.arrivalStation = arrivalStation;
+	}
+	
+	public String getArrivalCity() { return arrivalCity;}
+	public void setArrivalCity(String arrivalCity) {
+		this.arrivalCity = arrivalCity;
 	}
 	
 	public String getArrivalTime() { return arrivalTime;}
@@ -112,5 +129,10 @@ public class TicketDetail {
 	public float getPrice() { return price;}
 	public void setPrice(float price) {
 		this.price = price;
+	}
+	
+	public String getHolderName() { return holderName;}
+	public void setHolderName(String holderName) {
+		this.holderName = holderName;
 	}
 }
