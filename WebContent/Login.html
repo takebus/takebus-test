@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Login</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <!--<script type="text/javascript" src="js/jquery.simplemodal.js"></script> -->
+    <link href="css/site.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div class="headMenu"><a href="Login.html">Login</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Register.html">Register</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="MyAccount.html">My Account</a></div>
+    <div class="headBg">
+      <div class="head">
+        <div class="l1"><img src="images/logo.jpg"></div>
+        <div class="l2">
+          <a href="#"><div>Contact Us</div></a>
+          <a href="#"><div>Tickets</div></a>
+          <a href="index.html"><div class="p1">Home</div></a>
+          <p class="cc"></p>
+        </div>
+        <p class="cc"></p>
+      </div>
+    </div>
+    <div class="main">
+      <div class="title1">HOME > Login</div>
+      <div class="box1">
+        <div class="form">
+          <div id="status" align="left">
+            <center><h2>User Login</h2>
+            <div id="login_response"><!-- spanner --></div>
+            </center>
+            <!-- <form id="login" action="javascript:alert('success!');"> -->
+            <form id="login">
+              <input type="hidden" name="action" value="user_login">
+              <div id="notification_error">The login info is not correct.</div>
+              <input type="hidden" name="module" value="login">
+
+              <label>Your Email</label><input type="text" name="email"><br />
+              <p id="email_error" class="error">Email is not valid!</p>
+              <label>Password</label><input type="password" name="password"><br />
+              <p id="password_error" class="error">Password should be 6-12 characters!</p>
+              <label>&nbsp;</label><a href="#"><label>Forgot your password?</label></a><br />
+              <label>&nbsp;</label><input value="Login" name="Login" id="login_button" class="big" type="submit" />
+              <label>&nbsp;</label><button id="register_button" type="button">Register</button>
+              <!-- <div id="ajax_loading">
+                <img align="absmiddle" src="images/spinner.gif">&nbsp;Processing...
+              </div> -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="foot">The xxxx Team www.xxxxxx.com   Contact With <a href="3">xxxxx.com</a>  2002-2013 xxxx Corp</div> -->
+  </body>
+</html>
+<script>
+$(".leftMenu").height($(".rightBody").height());
+</script>

@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ViewProfile</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/profile.js"></script>
+    <link href="css/site.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="headMenu">
+    <label></label>
+    <a class='logout' style="display:none;" href="home_1.html">&emsp;&emsp;&emsp;Logout</a>
+    <a class="logReg" href="Login.html">Login</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="logReg" href="Register.html">Register</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="MyAccount.html">My Account</a>
+    </div>
+    <div class="headBg">
+      <div class="head">
+        <div class="l1"><img src="images/logo.jpg"></div>
+        <div class="l2">
+          <a href="#"><div>Contact Us</div></a>
+          <!-- <a href="#"><div>Tickets</div></a> -->
+          <a href="index.html"><div class="p1">Home</div></a>
+          <p class="cc"></p>
+        </div>
+        <p class="cc"></p>
+      </div>
+    </div>
+    <div class="main">
+      <div class="title1">HOME > My Account</div>
+      <div class="left1 box1">
+        <div class="leftMenu">
+          <div class="p1">My Tickets</div>
+          <ul style="display: block;">
+            <li>
+              <a href="Unfinished.html">
+                <span class="title">Unfinished Tickets</span>
+              </a>
+            </li>
+            <li>
+              <a href="Finished.html">
+                <span class="title">Finished Tickets</span>
+              </a>
+            </li>
+          </ul>
+          <div class="p1">My Profile</div>
+          <ul style="display: block;">
+            <li class="">
+              <a href="ViewProfile.html">
+                <span class="title">View Profile</span>
+              </a>
+            </li>
+            <li class="">
+              <a href="ChangePassword.html">
+                <span class="title">Change Password</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="right1 box1 rightBody">
+        <div class="mar1">
+          <div class="title1">My Profile</div>
+          <!-- need to check editable and uneditable cases -->
+          <div class="mar1">
+            <table width="400" border="0" cellspacing="0" cellpadding="0" class="table1">
+              <tr>
+                <td width="17%">Login Email<br /></td>
+                <td width="60%"><label id="user"> logined user </label></td>
+                <td width="33%" class="color2"><br /></td>
+              </tr>
+              <tr>
+                <td>First Name</td>
+                <td><input type="text" name="fname" class="input1" /></td>
+                <td class="color2"><br /></td>
+              </tr>
+              <tr>
+                <td>Last Name</td>
+                <td><input type="text" name="lname"  class="input1" /></td>
+                <td class="color2"></td>
+              </tr>
+              <tr>
+                <td>Address</td>
+                <td><input type="text" name="addr" class="input1" /></td>
+                <td class="color2"></td>
+              </tr>
+              <tr>
+                <td>City</td>
+                <td><input type="text" name="city" class="input1" /></td>
+                <td class="color2"> </td>
+              </tr>
+              <tr>
+                <td>State</td>
+                <td><input type="text" name="state" class="input1" /></td>
+                <td class="color2"> </td>
+              </tr>
+              <tr>
+                <td>Zip</td>
+                <td><input type="text" name="zip" class="input1" /></td>
+                <td class="color2"> </td>
+              </tr>
+              <tr>
+                <td>Country</td>
+                <td><input type="text" name="country" class="input1" /></td>
+                <td class="color2"> </td>
+              </tr>
+              <tr>
+                <td>Phone Number</td>
+                <td><input type="text" name="phone" class="input1" /></td>
+                <td class="color2"></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td colspan="2"><button class="bt1" id ="update">Update</button></td>
+              </tr>
+            </table>
+          </div>
+          <p class="cc"></p>
+        </div>
+        <div class="line1"></div>
+      </div>
+      <p class="cc"></p>
+    </div>
+    <div class="foot">The xxxx Team www.xxxxxx.com   Contact With <a href="3">xxxxx.com</a>  2002-2013 xxxx Corp</div>
+  </body>
+</html>
+<script>
+  // init('Viewprofile');
+  $(".leftMenu").height($(".rightBody").height());
+</script>

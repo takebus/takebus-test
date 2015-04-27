@@ -6,14 +6,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Ticket {
 	private int ticketID;
-	
 	private int userID;
-	
 	private int orderID;
 	
-	private int scheduleID;
-
-	//private String holderName;
+	private String scheduleIDStr;
+	
+	private String departureStation;
+	private String departureTime;
+	private String arrivalStation;
+	private String arrivalTime;
+	
+	private String busOperator;
 	
 	private String ticketDate;
 
@@ -25,13 +28,17 @@ public class Ticket {
 
 	
 	public Ticket() {}
-	public Ticket(int ticketID, int userID, int orderID, int scheduleID, String ticketDate, 
-			String ticketType, String barcode, String expire, float price) {
+	public Ticket(int ticketID, int userID, int orderID, String scheduleIDStr, String departureStation, String departureTime, 
+			String arrivalStation, String arrivalTime, String busOperator, String ticketDate, String ticketType, String barcode, String expire, float price) {
 		this.ticketID = ticketID;
 		this.userID = userID;
 		this.orderID = userID;
-		this.scheduleID = scheduleID;
-		//this.holderName = holderName;
+		this.scheduleIDStr = scheduleIDStr;
+		this.departureStation = departureStation;
+		this.departureTime = departureTime;
+		this.arrivalStation = arrivalStation;
+		this.arrivalTime = arrivalTime;
+		this.busOperator = busOperator;
 		this.ticketDate = ticketDate;
 		this.ticketType = ticketType;
 		this.barcode = barcode;
@@ -53,17 +60,37 @@ public class Ticket {
 	public void setOrderID(int orderID) {
 		this.orderID = orderID;
 	}
+		
+	public String getScheduleIDStr() { return scheduleIDStr;}
+	public void setScheduleIDStr(String scheduleIDStr) {
+		this.scheduleIDStr = scheduleIDStr;
+	}
 	
-	public int getScheduleID() { return scheduleID;}
-	public void setScheduleID(int scheduleID) {
-		this.scheduleID = scheduleID;
+	public String getDepartureStation() { return departureStation;}
+	public void setDepartureStation(String departureStation) {
+		this.departureStation = departureStation;
 	}
-/*	
-	public String getHolderName() { return holderName;}
-	public void setHolderName(String holderName) {
-		this.holderName = holderName;
+	
+	public String getDepartureTime() { return departureTime;}
+	public void setDepartureTime(String departureTime) {
+		this.departureTime = departureTime;
 	}
-*/	
+	
+	public String getArrivalStation() { return arrivalStation;}
+	public void setArrivalStation(String arrivalStation) {
+		this.arrivalStation = arrivalStation;
+	}
+	
+	public String getArrivalTime() { return arrivalTime;}
+	public void setArrivalTime(String arrivalTime) {
+		this.arrivalTime = arrivalTime;
+	}
+	
+	public String getBusOperator() { return busOperator;}
+	public void setBusOperator(String busOperator) {
+		this.busOperator = busOperator;
+	}
+	
 	public String getTicketDate() { return ticketDate;}
 	public void setTicketDate(String ticketDate) {
 		this.ticketDate = ticketDate;

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Paying</title>
+<script src="js/jquery.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<link href="css/site.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="headMenu">
+    <label></label>
+    <a class='logout' style="display:none;" onClick="logout()">&emsp;&emsp;&emsp;Logout</a>
+    <a class="logReg" href="#">Login</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="logReg" href="#">Register</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="#">My Account</a>
+</div>
+<div class="headBg">
+    <div class="head">
+      <div class="l1"><img src="images/logo.jpg"></div>
+        <div class="l2">
+            <a href="#"><div>Contact Us</div></a>
+            <a href="#"><div>Tickets</div></a>
+        	<a href="#"><div class="p1">Home</div></a>
+            <p class="cc"></p>
+      </div>
+        <p class="cc"></p>
+    </div>
+</div>
+<div class="main">
+	<div class="title1">HOME > Paying</div>
+<!--  <div class="left1 box1">
+     <div class="leftMenu">
+     		<div class="p1">My Tickets</div>
+          <div>Saved Tickets</div>
+          <div>Tickets Pclicy</div>
+          <div>Profile</div>
+          <div>Account Setting</div>
+          <div>Bus Features</div>
+     </div>
+  </div>
+ -->  
+  <div class="right1 box1 rightBody">      
+    <div id="pay-note">
+      <h2>Dear customer</h2>
+      <p>Your tickets cost</p>
+      <p>---------------------------------</p>
+      <p>amount:&emsp;&emsp;&emsp;<span id="amount"></span></p>
+      <p>tax:&emsp;&emsp;&emsp;&emsp;&emsp;<span id="tax"></span></p>
+      <p>---------------------------------</p>
+      <p>total:&emsp;&emsp;&emsp;&emsp;&ensp;<span id="total"></span></p><br>
+    </div>  
+        
+    <div class="tab2" style="margin-left: 6%; ">
+      <p class="title3">Please choose your payment method.<br><br></p>
+      <div onclick="changeTab('card')" class="choose">Credit card</div>
+      <div onclick="changeTab('paypal')">Paypal</div>
+    </div>
+    <div class="mar1" >
+      <div class="tabContent" >
+        <table width="400" border="0" cellspacing="0" cellpadding="0" class="table1">
+          <tr>
+            <td width="17%">* First Name<br /></td>
+            <td width="50%"><input type="text" name="fname" class="input1" placeholder="Name on card"/ required></td>
+            <td width="33%" class="color2"><br /></td>
+          </tr>
+          <tr>
+            <td>* Last Name</td>
+            <td><input type="text" name="lname" class="input1" placeholder="Name on card"/ required></td>
+            <td class="color2"><br /></td>
+          </tr>
+          <tr>
+            <td>* Visa</td>
+            <td>
+              <select name="cardType" class="input1" style="width:150px;" required>
+                  <option value="visa">Visa</option>
+                  <option value="masterCard">MasterCard</option>
+                  <option value="discover">Discover</option>
+                  <option value="americanExpress">American Express</option>
+                </select>
+                <img src="./images/cardlogo.jpg" style="position: relative; top:12px; left:20px ;width:150px"/>
+              </td>
+            <td class="color2"></td>
+          </tr>
+          <tr>
+            <td>* Card</td>
+            <td><input type="text" name="cardNum" class="input1" style="width:70%;" maxLength="16" pattern="[0-9]{16}" placeholder="please input 16 digits credit card number" required>
+              &nbsp;
+            <input name="sid" type="text" class="input1" maxLength="3" style="width:10%;" placeholder="SID" /></td>
+            <td class="color2">&nbsp;</td>
+          </tr>
+          <tr>
+            <td>* Expired Date</td>
+            <td><input type="text" name="expire" id="textfield4" class="input1" placeholder="MM/Year" required /></td>
+            <td class="color2"></td>
+          </tr>
+          <tr>
+            <td>Billing Address</td>
+            <td><input type="text" name="billAddr" id="textfield6" class="input1" required /></td>
+            <td class="color2"></td>
+          </tr>
+          <tr>
+            <td>City</td>
+            <td><input type="text" name="city" id="textfield8" class="input1" required /></td>
+            <td class="color2"></td>
+          </tr>
+          <tr>
+            <td>State</td>
+            <td><input type="text" name="state" id="textfield9" class="input1" required /></td>
+            <td class="color2"></td>
+          </tr>
+           <tr>
+            <td>Country </td>
+            <td><input type="text" name="country" class="input1" required/></td>
+            <td class="color2"></td>
+          </tr>
+          <tr>
+            <td>Zipcode </td>
+            <td><input type="text" name="zip" id="textfield10" class="input1"required /></td>
+            <td class="color2"></td>
+          </tr>
+          <tr>
+            <td>Shipping Address</td>
+            <td><input type="text" name="shipAddr" id="textfield5" class="input1" /></td>
+            <td class="color2">(optional)<td>
+          </tr>                       
+        </table> 
+        <p class="type-error"></p>
+        <div class="bt1" style="margin:30px 15%; width:100px;" onClick="placeOrder('card')">Place Order</div>       
+      </div>
+
+      <div class="tabContent" style="display:none;">
+        <div style="margin:150px 10px;">
+          <img src="images/logo_paypal.png"/><br><br>
+               You will be linked to paypal to finish your order.</div>
+         <div class="bt1" style="margin:30px 10%; width:100px;" onClick="placeOrder('paypal')">Place Order</div>
+      </div>
+    </div>
+</div>
+
+<!-- <div class="foot">The xxxx Team www.xxxxxx.com   Contact With <a href="3">xxxxx.com</a>  2002-2013 xxxx Corp</div>
+
+ --></body>
+</html>
+
+<script>
+  init('paying');
+  // DOM control
+	$(".leftMenu").height($(".rightBody").height());
+  function changeTab(choose) {
+    $('.tab2 div').toggleClass('choose');
+    $('.mar1 .tabContent').toggle();
+  };
+</script>
