@@ -123,6 +123,18 @@ public class UserService {
 			@FormParam("zip") String zip,
 			@FormParam("country") String country) throws IOException {
 		
+		System.out.println(
+				"email:" + email + ", " + 
+				"password:" + password + ", " + 
+				"firstName:" + firstName + ", " +
+				"lastName:" + lastName + ", " +
+				"phoneNumber:" + phoneNumber + ", " + 
+				"address:" + address + ", " + 
+				"city:" + city + ", " +
+				"state:" + state + ", " +
+				"zip:" + zip + ", " +
+				"country:" + country);
+		
 		Gson gson = new Gson();
 		Map<String, String> succ = new HashMap<String, String>();
 		succ.put("callback", "success");

@@ -19,24 +19,39 @@ public class Ticket {
 
 	private String ticketType;
 	private String barcode;
-	private float price;
+	private String expire;	
 	
-	private String expire;
+	private float price;
+
 	
 	public Ticket() {}
-	public Ticket(int ticketID, int scheduleID, String ticketDate, String ticketType, String barcode, float price) {
+	public Ticket(int ticketID, int userID, int orderID, int scheduleID, String ticketDate, 
+			String ticketType, String barcode, String expire, float price) {
 		this.ticketID = ticketID;
+		this.userID = userID;
+		this.orderID = userID;
 		this.scheduleID = scheduleID;
 		//this.holderName = holderName;
 		this.ticketDate = ticketDate;
 		this.ticketType = ticketType;
 		this.barcode = barcode;
+		this.expire = expire;
 		this.price = price;
 	}
 	
 	public int getTicketID() { return ticketID;}
 	public void setTicketID(int ticketID) {
 		this.ticketID = ticketID;
+	}
+	
+	public int getUserID() { return userID;}
+	public void setUserID(int userID) {
+		this.userID = userID;
+	}
+	
+	public int getOrderID() { return orderID;}
+	public void setOrderID(int orderID) {
+		this.orderID = orderID;
 	}
 	
 	public int getScheduleID() { return scheduleID;}
@@ -62,6 +77,11 @@ public class Ticket {
 	public String getBarcode() { return barcode;}
 	public void setBarcode(String barcode) {
 		this.barcode = barcode;
+	}
+	
+	public String getExpire() { return expire;}
+	public void setExpire(String expire) {
+		this.expire = expire;
 	}
 	
 	public float getPrice() { return price;}
