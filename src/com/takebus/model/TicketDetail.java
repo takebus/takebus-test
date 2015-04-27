@@ -1,19 +1,20 @@
 package com.takebus.model;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
-
-@XmlRootElement
-public class Ticket {
+public class TicketDetail {
 	private int ticketID;
-	private int userID;
-	private int orderID;
+	//private int userID;
+	private User user;
+	//private int orderID;
+	private Order order;
 	
 	private String scheduleIDStr;
 	
 	private String departureStation;
+	private String departureCity;
 	private String departureTime;
+	
 	private String arrivalStation;
+	private String arrivalCity;
 	private String arrivalTime;
 	
 	private String busOperator;
@@ -27,17 +28,19 @@ public class Ticket {
 	private float price;
 	String holderName;
 	
-	public Ticket() {}
-	public Ticket(int ticketID, int userID, int orderID, String scheduleIDStr, String departureStation, String departureTime, 
-			String arrivalStation, String arrivalTime, String busOperator, String ticketDate, String ticketType, 
-			String barcode, String expire, float price, String holderName) {
+	public TicketDetail() {}
+	public TicketDetail(int ticketID, User user, Order order, String scheduleIDStr, String departureStation, String departureCity, String departureTime, 
+			String arrivalStation, String arrivalCity, String arrivalTime, String busOperator, String ticketDate, String ticketType, String barcode, 
+			String expire, float price, String holderName) {
 		this.ticketID = ticketID;
-		this.userID = userID;
-		this.orderID = userID;
+		this.user = user;
+		this.order = order;
 		this.scheduleIDStr = scheduleIDStr;
 		this.departureStation = departureStation;
+		this.departureCity = departureCity;
 		this.departureTime = departureTime;
 		this.arrivalStation = arrivalStation;
+		this.arrivalCity = arrivalCity;
 		this.arrivalTime = arrivalTime;
 		this.busOperator = busOperator;
 		this.ticketDate = ticketDate;
@@ -53,14 +56,14 @@ public class Ticket {
 		this.ticketID = ticketID;
 	}
 	
-	public int getUserID() { return userID;}
-	public void setUserID(int userID) {
-		this.userID = userID;
+	public User getUser() { return user;}
+	public void setUser(User user) {
+		this.user = user;
 	}
 	
-	public int getOrderID() { return orderID;}
-	public void setOrderID(int orderID) {
-		this.orderID = orderID;
+	public Order getOrder() { return order;}
+	public void setOrder(Order order) {
+		this.order = order;
 	}
 		
 	public String getScheduleIDStr() { return scheduleIDStr;}
@@ -73,6 +76,11 @@ public class Ticket {
 		this.departureStation = departureStation;
 	}
 	
+	public String getDepartureCity() { return departureCity;}
+	public void setDepartureCity(String departureCity) {
+		this.departureCity = departureCity;
+	}
+	
 	public String getDepartureTime() { return departureTime;}
 	public void setDepartureTime(String departureTime) {
 		this.departureTime = departureTime;
@@ -81,6 +89,11 @@ public class Ticket {
 	public String getArrivalStation() { return arrivalStation;}
 	public void setArrivalStation(String arrivalStation) {
 		this.arrivalStation = arrivalStation;
+	}
+	
+	public String getArrivalCity() { return arrivalCity;}
+	public void setArrivalCity(String arrivalCity) {
+		this.arrivalCity = arrivalCity;
 	}
 	
 	public String getArrivalTime() { return arrivalTime;}
