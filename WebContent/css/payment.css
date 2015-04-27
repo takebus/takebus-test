@@ -1,0 +1,85 @@
+@charset utf-8;
+body {overflow-x:hidden;}
+.top-box, .bottom-box {min-width:1270px;}
+.top-box {background:url(../images/top-menu.jpg) repeat-y;position:relative;}
+.top-wrap {position:relative;height:90px;width:1270px;margin:0 auto;}
+.account {float:right;height:20px;line-height:20px;margin:35px 40px 35px 0;color:#fff;position:relative;}
+.account span {float:left;display:inline-block;height:20px;line-height:20px;}
+.account .menu-arr {display:inline-block;height:20px;width:20px;background:url(../images/acc.png) 5px 7px no-repeat;cursor:pointer;}
+.account .menu {display:none;position:absolute;top:30px;right:-15px;width:200px;background:#fff;z-index:1000;border-radius:5px;box-shadow:0 1px 8px #999;}
+.account .menu:before {content:"";position:absolute;top:-20px;right:15px;height:0;width:0;overflow: hidden;font-size: 0;line-height: 0;border-color:transparent transparent #fff transparent;border-style:dashed dashed solid dashed;border-width:10px;}
+.account .menu  a {display:block;height:18px;line-height:18px;padding:11px 18px;font-size:12px;font-weight:bold;color:#333;background-image:url(../images/acc.png);background-repeat:no-repeat;}
+.account .menu  a.setting {background-position:162px -7px;border-radius:5px 5px 0 0;}
+.account .menu  a.oders {background-position:162px -37px;}
+.account .menu  a.faq {background-position:162px -67px;}
+.account .menu  a.logout {background-position:165px -102px;border-radius:0 0 5px 5px;}
+.account .menu  a:hover {background-color:#f7f7f7;}
+.account .menu  a:active {background-color:#e9e9e9;}
+.account .menu  a.oders span {display:none;float:right;margin-right:2px;width:18px;height:18px;background:#fd5032;border-radius:50%;color:#fff;text-align:center;line-height:18px;}
+.account .menu  a.hasoder {background-image:none;}
+.account .menu  a.hasoder span  {display:block;}
+
+.middle-wrap {width:1270px;margin:0 auto;border-bottom:1px dotted #DBDBDB;background:#fff;}
+.middle-wrap .concent-wrap {width:1200px;margin:0 auto;padding:50px 0 20px;overflow-y:hidden;zoom:1;}
+.concent-wrap  .fl {float:left;width:837px;}
+.concent-wrap  .fr {float:right;width:334px;margin-right: 1px;}
+.methood h1 {font-size:30px;margin:0;}
+.choose_paycard{padding-top:30px;width:837px;overflow:hidden;}
+.choose_paycard ul {width:856px;overflow:hidden;}
+.choose_paycard ul li {float:left;margin-right:19px;width:266px;height:176px;position:relative;}
+.choose_paycard ul li  .crad{width:264px;height:118px;border:1px solid #f5f5f5;border-radius:6px;overflow:hidden;cursor:pointer;}
+.choose_paycard ul li  .crad_name {font-size:12px;color:#ccc;line-height:3;text-align:center;}
+.choose_paycard ul li:after {display:none;position:absolute;left:50%;bottom:0;margin-left:-17px;content:"";width:0;height:0;line-height:0;font-size:0;border-width:17px;border-style:dashed dashed solid dashed;border-color:transparent transparent #f5f5f5 transparent;}
+.choose_paycard ul li.cur  .crad {width:260px;height:114px;border:3px solid #2b9cff;}
+.choose_paycard ul li.cur  .crad img {margin-top:-2px;margin-left:-2px;}
+.choose_paycard ul li.cur:after  {display:block;}
+.crad_info p {padding:10px 30px;background:#f5f5f5;border-radius:6px;color:#999;font-size:16px; line-height: 1.5;}
+.methood .btn {width:330px;height:52px;margin:70px auto 0;}
+.methood .btn .back {display:inline-block;margin:0 20px;height:52px;line-height:52px;color:#ccc;font-size:20px;} 
+.methood .btn .continue {display:inline-block;width:150px;height:52px;line-height:52px;color:#fff;font-size:20px;text-align:center;background:url(../images/btn.jpg) no-repeat;} 
+
+.ticket_info {margin-bottom:20px;border-radius:6px;border:1px solid #f5f5f5;padding-bottom:44px;background:url(../images/fr-bg.jpg) center bottom no-repeat}
+.padd14 {padding:0 14px;overflow:hidden;}
+.ticket_info .info-box {height:40px;line-height:40px;position:relative;}
+.info-box span {float:left;font-size:12px;font-weight:bold;}
+.info-box span .line {margin:0 10px;}
+.info-box span i {font-weight:normal;font-style:normal;}
+.info-box  a {float:right;color:#06f;font-size:12px;}
+.info-box .e-ticket {font-size:16px;}
+.grey {background:#f7f7f7;}
+.ticket_info .border-grey {border-bottom:1px solid #E7E7E7;}
+.info-box .schedule {float:right;}
+.info-box2 {padding:5px 0;font-size:12px;color:#333;line-height:1.5;}
+.info-box2 .time {color:#999;margin-bottom:5px;}
+.info-box2 .site {color:#999;}
+.info-box2 .time  span {color:#333;}
+.ticket_info .money {clear:both;float:right;width:155px;}
+.money .money-tab {border-bottom:1px solid #000;padding-left:25px;line-height:2.5;}
+.l-h {overflow:hidden;font-size:12px;}
+.l-h span {float:left;color:#999;}
+.l-h b {float:right;color:#333;font-weight:normal;}
+.due span,.due b  {font-size:14px;color:#333;font-weight:bold;}
+.info-box .dealings {position:absolute;right:0;top:32px;padding:1px;text-align:center;width:45px;font-size:14px;color:#fff;line-height:1;font-weight:normal;background:#2190ff;border-radius:3px;}
+.info-box .return {background:#fd5032;}
+
+.bottom-box {height: 620px;background: #fff url(../images/index-botbg.jpg) center bottom no-repeat;}
+.bottom-wrap {position:relative;height:620px;width:1270px;margin:0 auto;}
+.img-list {padding-top:72px;height:359px;width:100%;}
+.img-list img {width:100%;height:auto;}
+.bottom-wrap .sign {height:94px;width:100%;}
+.sign .f-l {float:left;margin-left:40px;color:#000;font-size:30px;font-weight:bold;}
+.sign .f-l span{position:relative;top:-6px;display:block;color:#666;font-size:13px;font-weight:normal;font-variant:small-caps;}
+.sign .f-r {float:right;margin-right:35px;}
+.sign .f-r a {display:inline-block;margin:0 5px;width:100px;height:30px;line-height:32px;border:2px solid #3941d4;text-align:center;color:#3941d4;font-size:12px;border-radius:5px;}
+.sign .f-r a.signup {background:#3941d4;color:#fff;}
+.bottom-wrap .floot {float:left;width:100%;padding-top:28px;height:66px;border-top:1px solid #ddd;}
+.floot .f-l {float:left;padding-left:20px;}
+.floot .f-l  span {margin:0 20px;color:#999;font-size:12px;}
+.floot .f-l  span.frist {color:#000;font-size:16px;font-weight:bold;}
+.floot .f-r {float:right;padding-right:40px;}
+.floot .f-r  span{display:inline-block;margin:0 2px;padding-left:10px;width:60px;height:25px;line-height:25px;border-radius:5px;color:#fff;font-size:12px;text-align:center;cursor:pointer;}
+.floot .f-r  span:hover {filter:alpha(opacity=70);opacity:.7;}
+.floot .f-r  span.share {background:#274f93 url(../images/share.png) -6px -8px no-repeat;}
+.floot .f-r  span.tweet {background:#69b2e0 url(../images/share.png) -6px -41px no-repeat;}
+.floot .f-r  span.gplus {background:#e74346 url(../images/share.png) -8px -82px no-repeat;}
+

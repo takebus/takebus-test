@@ -1,0 +1,21 @@
+@charset utf-8;
+.success {width:400px;margin:60px auto 60px;padding-left:100px;background:url(../images/success_1.png) no-repeat;font-size:25px;}
+.success p {line-height:1.5;}
+.success .state {color:#878787;}
+.success .total {color:#535353;}
+.success .mail {width:78%;margin-top:5px;padding:2px 5px;font-size:14px;color:#fd5032;border-width:1px; border-style:solid; border-radius:3px;}
+.success .mail a {color:#06f;text-decoration:underline;}
+.order-table {border:1px solid #e7e7e7;margin:10px 10%;}
+.order-table table {width:100%;text-align:center;font-size:14px;color:#666;border-collapse:collapse;}
+.order-table table th,.order-table table td {font-weight:normal;height:50px;width:14%;}
+.order-table table tr:nth-child(even) {background:#f7f7f7;}
+.fd5 {color:#fd5032;}
+.order-table .tit {padding:0 30px;height:50px;line-height:50px;background:#f7f7f7;color:#333;}
+.order-table .tit i {font-style:normal;margin:0 10px;color:#fff;padding:0 5px;border-radius:5px;font-size:14px;}
+.order-table .tit .schedule {float:left;}
+.order-table .tit .date{float:right;}
+.from .tit  i {background:#2190ff;}
+.return .tit  i {background:#fd5032;}
+.from {border-radius:5px 5px 0 0;margin-bottom:25px;}
+.return {border-radius: 0 0 5px 5px;}
+.concent-wrap .btn {display:block;margin:60px auto 60px;width:200px;height:52px;line-height:52px;font-size:18px;color:#fff;background-color:rgb(56, 137, 238);text-align:center;}
