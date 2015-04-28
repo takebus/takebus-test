@@ -10,7 +10,7 @@ import javax.ws.rs.core.MediaType;
 import com.takebus.dao.TicketDetailDao;
 import com.takebus.model.TicketDetail;
 
-@Path("ticketDetail")
+@Path("/ticketDetail")
 public class TicketDetailService {
 	
 	@GET
