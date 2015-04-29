@@ -7,14 +7,18 @@ public class Station {
 	
 	private int stationID;
 	private String station;
-	private int cityID;
+	//private int cityID;
+	private String city;
+	private String state;
 	
 	public Station() {}
 	
-	public Station(int stationID, String station, int cityID) {
+	public Station(int stationID, String station, String city, String state) {
 		this.stationID = stationID;
 		this.station = station;
-		this.cityID = cityID;
+		//this.cityID = cityID;
+		this.city = city;
+		this.state = state;
 	}
 	
 	public int getStationID() { return stationID;}
@@ -26,9 +30,14 @@ public class Station {
 	public void setStation(String station) {
 		this.station = station;
 	}
+
+	public String getcity() { return city;}
+	public void setcity(String city) {
+		this.city = city;
+	}
 	
-	public int getCityID() { return cityID;}
-	public void setCityID(int cityID) {
-		this.cityID = cityID;
+	public String getState() { return state;}
+	public void setState(String state) {
+		this.state = state;
 	}
 }

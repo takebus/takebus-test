@@ -6,13 +6,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class BusOperator {
 	
 	private int busOperatorID;
-	private String busOperator;
+	private String busOperatorName;
 	
 	public BusOperator() {}
 	
-	public BusOperator(int busOperatorID, String busOperator) {
+	public BusOperator(int busOperatorID, String busOperatorName) {
 		this.busOperatorID = busOperatorID;
-		this.busOperator = busOperator;
+		this.busOperatorName = busOperatorName;
 	}
 	
 	public int getBusOperatorID() { return busOperatorID;}
@@ -20,8 +20,8 @@ public class BusOperator {
 		this.busOperatorID = busOperatorID;
 	}
 	
-	public String getBusOperator() { return busOperator;}
-	public void setBusOperator(String busOperator) {
-		this.busOperator = busOperator;
+	public String getBusOperatorName() { return busOperatorName;}
+	public void setBusOperatorName(String busOperator) {
+		this.busOperatorName = busOperatorName;
 	}
 }

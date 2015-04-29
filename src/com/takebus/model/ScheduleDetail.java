@@ -1,39 +1,41 @@
 package com.takebus.model;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import java.util.*;
 
-
-@XmlRootElement
-public class Schedule {
-	
+public class ScheduleDetail {
 	private int scheduleID;
 	private String scheduleIDStr;
-	private int departureCityID;
+	
 	private String departureTime;
-	private int arrivalCityID;
+	private List<Station> departureStations;
+	
 	private String arrivalTime;
-	private int busOperatorID;
+	private List<Station> arrivalStations;
+	
+	private BusOperator busOperator;
 	private float price;
-	//private String duration;
 	private int availability;
 	
-	public Schedule() {}
-	
-	public Schedule(int scheduleID, String scheduleIDStr, int departureCityID, String departureTime, 
-				    int arrivalCityID, String arrivalTime, int busOperatorID, float price, 
-				    int availability) {
+	public ScheduleDetail() {}
+
+	public ScheduleDetail(int scheduleID, String scheduleIDStr, String departureTime, List<Station> departureStations, 
+			 String arrivalTime, List<Station> arrivalStations, BusOperator busOperator, float price,
+			 int availability) {
 		this.scheduleID = scheduleID;
 		this.scheduleIDStr = scheduleIDStr;
-		this.departureCityID = departureCityID;
+		
+		this.departureStations = departureStations;
 		this.departureTime = departureTime;
-		this.arrivalCityID = arrivalCityID;
+		
+		this.arrivalStations = arrivalStations;
 		this.arrivalTime = arrivalTime;
-		this.busOperatorID = busOperatorID;
+		
+		this.busOperator = busOperator;
 		this.price = price;
-		//this.duration = duration;
 		this.availability = availability;
 	}
 	
+
 	public int getScheduleID() { return scheduleID;}
 	public void setScheduleID(int scheduleID) {
 		this.scheduleID = scheduleID;
@@ -44,9 +46,9 @@ public class Schedule {
 		this.scheduleIDStr = scheduleIDStr;
 	}
 	
-	public int getDepartureCityID() { return departureCityID;}
-	public void setDepartureCityID(int departureCityID) {
-		this.departureCityID = departureCityID;
+	public List<Station> getDepartureStations() { return departureStations;}
+	public void setDepartureStations(List<Station> departureStations) {
+		this.departureStations = departureStations;
 	}
 	
 	public String getDepartureTime() { return departureTime;}
@@ -54,9 +56,9 @@ public class Schedule {
 		this.departureTime = departureTime;
 	}
 	
-	public int getArrivalCityID() { return arrivalCityID;}
-	public void setArrivalCityID(int arrivalCityID) {
-		this.arrivalCityID = arrivalCityID;
+	public List<Station> getArrivalStations() { return arrivalStations;}
+	public void setArrivalStations(List<Station> arrivalStations) {
+		this.arrivalStations = arrivalStations;
 	}
 	
 	public String getArrivalTime() { return arrivalTime;}
@@ -64,16 +66,16 @@ public class Schedule {
 		this.arrivalTime = arrivalTime;
 	}
 	
-	public int getBusOperatorID() { return busOperatorID;}
-	public void setBusOperatorID(int busOperatorID) {
-		this.busOperatorID = busOperatorID;
+	public BusOperator getBusOperator() { return busOperator;}
+	public void setBusOperator(BusOperator busOperator) {
+		this.busOperator = busOperator;
 	}
 	
 	public float getPrice() { return price;}
 	public void setPrice(float price) {
 		this.price = price;
 	}
-
+	
 	public int getAvailability() { return availability;}
 	public void setAvailability(int availability) {
 		this.availability = availability;
