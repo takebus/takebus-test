@@ -43,6 +43,14 @@ public class ScheduleDetailService {
 							  @FormParam("type") String type,
 							  @FormParam("departureDate") String departureDate,
 							  @FormParam("returnDate") String returnDate) {
+		
+		System.out.println("departure:" + departure + ", " + 
+							  "arrival:" + arrival + ", " + 
+								"type:" + type + ", " +
+							  	"departureDate:" + departureDate + ", " + 
+								"returnDate:" + returnDate);
+		
+		
 		Gson gson = new Gson();
 		
 		List<ScheduleDetail> ld = new ArrayList<ScheduleDetail>();
@@ -71,7 +79,20 @@ public class ScheduleDetailService {
 		hmap.put("departure", ld);
 		hmap.put("return", lr);
 		
-		return gson.toJson(hmap);
+		Map<String, List<ScheduleDetail>> hmap_d = new HashMap<String, List<ScheduleDetail>>();
+		hmap_d.put("departure", ld);
+		
+		Map<String, List<ScheduleDetail>> hmap_a = new HashMap<String, List<ScheduleDetail>>();
+		hmap_a.put("departure", ld);
+		hmap_a.put("return", lr);
+		
+		String one = "one";
+		if (type.equals(one)) {
+			System.out.println("test test one one");
+			return gson.toJson(hmap_d);
+		}
+		//if (type == "round") return gson.toJson(hmap_a);
+		else return gson.toJson(hmap);
 	}
 	
 	private static boolean isNotNull(String txt) {
