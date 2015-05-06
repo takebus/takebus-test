@@ -12,6 +12,9 @@ public class ScheduleDetail {
 	private String arrivalTime;
 	private List<Station> arrivalStations;
 	
+	
+	private List<Duration> durations;
+	
 	private BusOperator busOperator;
 	private float price;
 	private int availability;
@@ -19,7 +22,7 @@ public class ScheduleDetail {
 	public ScheduleDetail() {}
 
 	public ScheduleDetail(int scheduleID, String scheduleIDStr, String departureTime, List<Station> departureStations, 
-			 String arrivalTime, List<Station> arrivalStations, BusOperator busOperator, float price,
+			 String arrivalTime, List<Station> arrivalStations, List<Duration> durations, BusOperator busOperator, float price,
 			 int availability) {
 		this.scheduleID = scheduleID;
 		this.scheduleIDStr = scheduleIDStr;
@@ -30,6 +33,7 @@ public class ScheduleDetail {
 		this.arrivalStations = arrivalStations;
 		this.arrivalTime = arrivalTime;
 		
+		this.durations = durations;
 		this.busOperator = busOperator;
 		this.price = price;
 		this.availability = availability;
@@ -64,6 +68,11 @@ public class ScheduleDetail {
 	public String getArrivalTime() { return arrivalTime;}
 	public void setArrivalTime(String arrivalTime) {
 		this.arrivalTime = arrivalTime;
+	}
+	
+	public List<Duration> getdurations() { return durations;}
+	public void setdurations(List<Duration> durations) {
+		this.durations = durations;
 	}
 	
 	public BusOperator getBusOperator() { return busOperator;}

@@ -7,18 +7,22 @@ public class Station {
 	
 	private int stationID;
 	private String station;
+	
 	//private int cityID;
 	private String city;
 	private String state;
 	
+	private String time;
+	
 	public Station() {}
 	
-	public Station(int stationID, String station, String city, String state) {
+	public Station(int stationID, String station, String city, String state, String time) {
 		this.stationID = stationID;
 		this.station = station;
 		//this.cityID = cityID;
 		this.city = city;
 		this.state = state;
+		this.time = time;
 	}
 	
 	public int getStationID() { return stationID;}
@@ -39,5 +43,10 @@ public class Station {
 	public String getState() { return state;}
 	public void setState(String state) {
 		this.state = state;
+	}
+	
+	public String getTime() { return time;}
+	public void setTime(String time) {
+		this.time = time;
 	}
 }
